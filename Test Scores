@@ -12,7 +12,7 @@ using namespace std;
 //Variables
 string stars(string text);
 
-//Declare Functions
+//Declare Functions that will be used
 void display_inventory();
 void add_item();
 void add_function();
@@ -20,11 +20,11 @@ void add_function();
 //Display Input File Data
 void display_inventory()
 {
-	char input[800];				//creates a character array for input file
+	char input[800];			//creates a character array for input file
 	
 	fstream inFile;				//creates an input file object
 
-	inFile.open("TestScores.txt");	//Open the input file
+	inFile.open("TestScores.txt");		//Open the input file
 
 	if(inFile.fail())
 	{
@@ -53,23 +53,23 @@ void display_inventory()
 
 void display_total()
 {
-	char input[800];				//creates a character array for input file
+	char input[800];			//creates a character array for input file
 	
 	fstream inFile;				//creates an input file object
 
-	inFile.open("TestScores.txt");	//Open the input file
+	inFile.open("TestScores.txt");		//Open the input file, the name of the file is within quotations 
 
-	
-	int Test1;
-	int Test2;
-	int Test3;
-	int Test4;
-	int Test5;
-	int userID;
-	int fakeID = 1;
-	int TestAverage;
-	string firstName;
-	string lastName;
+// each name variable coincides with the variable in the text files 	
+int Test1;
+int Test2;
+int Test3;
+int Test4;
+int Test5;
+int userID;
+int fakeID = 1;
+int TestAverage;
+string firstName;
+string lastName;
 
 
 	cout << "\t\ Holmes High School Grade Book \n\n";
@@ -111,7 +111,7 @@ void display_total()
 	
 
 	
-	inFile.close();				//close the input file
+	inFile.close();			//close the input file
 
 	cout << "\n\n Press [M or m] to return to Main Menu: ";
 	cin.ignore();
@@ -121,70 +121,73 @@ void display_total()
 //Add new items to Inventory
 void add_Item()
 {
-	int Test1;
-	int Test2;
-	int Test3;
-	int Test4;
-	int Test5;
-	int userID;
-	string firstName;
-	string lastName;
+
+// all of the names of the variables conincide with the text file variables
+int Test1;
+int Test2;
+int Test3;
+int Test4;
+int Test5;
+int userID;
+string firstName;
+string lastName;
 
 
-	cout << "\t\t Adding New Students Into The Grade Book: ";
-	cout << "\n\n\t Please Enter A New Student First Name:  ";
-	cin >> firstName;
-	cin.ignore(800,'\n');
+cout << "\t\t Adding New Students Into The Grade Book: ";
+cout << "\n\n\t Please Enter A New Student First Name:  ";
+cin >> firstName;
+cin.ignore(800,'\n');
 
-	cout << "\n\t Enter Enter The Student's Last Name:  ";
-	cin >> lastName;
-	cin.ignore(800,'\n');
+cout << "\n\t Enter Enter The Student's Last Name:  ";
+cin >> lastName;
+cin.ignore(800,'\n');
 
-	cout << "\n\t Enter The identification Number :  ";
-	cin >> userID;
-	cin.ignore(800,'\n');
+cout << "\n\t Enter The identification Number :  ";
+cin >> userID;
+cin.ignore(800,'\n');
 
-	cout << "\n\t Enter The First Test Grade :  ";
-	cin >> Test1;
-	cin.ignore(800,'\n');
+cout << "\n\t Enter The First Test Grade :  ";
+cin >> Test1;
+cin.ignore(800,'\n');
 
-	cout << "\n\t Enter The Second Test Grade :  ";
-	cin >> Test2;
-	cin.ignore(800,'\n');
+cout << "\n\t Enter The Second Test Grade :  ";
+cin >> Test2;
+cin.ignore(800,'\n');
 
-	cout << "\n\t Enter The Third Test Grade :  ";
-	cin >> Test3;
-	cin.ignore(800,'\n');
+cout << "\n\t Enter The Third Test Grade :  ";
+cin >> Test3;
+cin.ignore(800,'\n');
 
-	cout << "\n\t Enter The Fourth Test Grade :  ";
-	cin >> Test4;
-	cin.ignore(800,'\n');
+cout << "\n\t Enter The Fourth Test Grade :  ";
+cin >> Test4;
+cin.ignore(800,'\n');
 
-	cout << "\n\t Enter The Fifth Test Grade :  ";
-	cin >> Test5;
-	cin.ignore(800,'\n');
-		
-	ofstream outFile;				//Creates an output file object
+cout << "\n\t Enter The Fifth Test Grade :  ";
+cin >> Test5;
+cin.ignore(800,'\n');
+	
+ofstream outFile;				//Creates an output file object
 
-	outFile.open("TestScores.txt", ios::app);  //Opens output file, 
-	                                        //include ios::app for adding to file
+outFile.open("TestScores.txt", ios::app);  	//Opens output file, 
+                                	        //include ios::app for adding to file
 
-	outFile << firstName << "\t" << lastName << "\t" << userID << "\t" << Test1 << "\t" << Test2 << "\t" << Test3 << "\t" << Test4 << "\t" << Test5 << "\n";  //committs data to file
+outFile << firstName << "\t" << lastName << "\t" << userID << "\t" << Test1 << "\t" << Test2 << "\t" << Test3 << "\t" << Test4 << "\t" << Test5 << "\n";  //committs data to file
 
 
 
-	outFile.close();						//closes
+outFile.close();				//closes
 
-	cout << "\n\n New Student '" << firstName << " " << lastName << "' Has Been Added To Grade Book. " << endl;
-	cout << "\n\n Please Press [M or m] To Return To Main Menu: ";
-	cin.ignore();
-	cin.get();
+cout << "\n\n New Student '" << firstName << " " << lastName << "' Has Been Added To Grade Book. " << endl;
+cout << "\n\n Please Press [M or m] To Return To Main Menu: ";
+cin.ignore();
+cin.get();
+
 }
 
 int main()
 {
-	int choice;							//User Menu Choice
-	int exit = 0;							//Program Exit flag
+	int choice;				//User Menu Choice
+	int exit = 0;				//Program Exit flag
 
 	while (exit == 0)
 	{
