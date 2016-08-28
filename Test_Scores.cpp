@@ -24,7 +24,7 @@ void display_inventory()
 	
 	fstream inFile;				//creates an input file object
 
-	inFile.open("TestScores.txt");		//Open the input file
+	inFile.open("Test_Scores.txt");		//Open the input file
 
 	if(inFile.fail())
 	{
