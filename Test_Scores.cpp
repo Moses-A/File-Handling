@@ -23,9 +23,7 @@ void display_inventory()
 	char input[800];			//creates a character array for input file
 	
 	fstream inFile;				//creates an input file object
-
 	inFile.open("Test_Scores.txt");		//Open the input file
-
 	if(inFile.fail())
 	{
 		cout << " File not found - exiting program" << endl;
@@ -167,14 +165,10 @@ cin >> Test5;
 cin.ignore(800,'\n');
 	
 ofstream outFile;				//Creates an output file object
-
 outFile.open("TestScores.txt", ios::app);  	//Opens output file, 
-                                	        //include ios::app for adding to file
+//include ios::app for adding to file
 
 outFile << firstName << "\t" << lastName << "\t" << userID << "\t" << Test1 << "\t" << Test2 << "\t" << Test3 << "\t" << Test4 << "\t" << Test5 << "\n";  //committs data to file
-
-
-
 outFile.close();				//closes
 
 cout << "\n\n New Student '" << firstName << " " << lastName << "' Has Been Added To Grade Book. " << endl;
